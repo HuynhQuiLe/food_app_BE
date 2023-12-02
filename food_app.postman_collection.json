@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "764cb735-ef74-455d-bce9-aa346f9a3b61",
+		"name": "food_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14996985",
+		"_collection_link": "https://www.postman.com/lehuynhqui/workspace/le-huynh-qui/collection/14996985-764cb735-ef74-455d-bce9-aa346f9a3b61?action=share&creator=14996985&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"full_name\": \"Alice Lee\",\n    \"email\": \"alice@gmail.com\",\n    \"user_password\" : \"1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"alice@gmail.com\",\n    \"user_password\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIKE - UNLIKE Nhà Hàng",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjcsImtleSI6MTcwMTQ2Njg2MTEyNX0sImlhdCI6MTcwMTQ2Njg2MSwiZXhwIjoxNzAxNDY4NjYxfQ.jIg-_J6zy5oJNpCK9Et7GKoMR5Z_S9hyIBULsGnPrvU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/like/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"like",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách LIKE theo Nhà Hàng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/like/get-likes-by-res/5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"like",
+						"get-likes-by-res",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách LIKE theo Người Dùng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/like/get-likes-by-user/7",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"like",
+						"get-likes-by-user",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RATE Nhà Hàng",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjcsImtleSI6MTcwMTQ3Mzc4MDkwOH0sImlhdCI6MTcwMTQ3Mzc4MCwiZXhwIjoxNzAxNDc1NTgwfQ.dHUF1wxJ9Ye-21E2_xkn1d8vS_8NXZdo2wfmRt9A6_Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rate/create/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rate",
+						"create",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách RATE theo Nhà Hàng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/rate/get-rates-by-res/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rate",
+						"get-rates-by-res",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách RATE theo Người Dùng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/rate/get-rates-by-user/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rate",
+						"get-rates-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Đặt món ăn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjcsImtleSI6MTcwMTQ4NTcxNTA4MH0sImlhdCI6MTcwMTQ4NTcxNSwiZXhwIjoxNzAxNDg3NTE1fQ.jvxBn3UG71HJbP6LmovrwYjilamw-nmprX_J7vUVusw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 2,\n    \"order_code\": \"GWA6719\",\n    \"arr_sub_id\": \"1,2\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/order/create/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"order",
+						"create",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8686"
+		}
+	]
+}
